@@ -120,33 +120,49 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
       <div className="container mx-auto px-4 py-8 md:py-16">
-        <div className="text-center mb-12 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-2xl mb-6">
-            <Icon name="Building2" size={40} className="text-primary" />
+        <div className="relative mb-16 overflow-hidden rounded-3xl shadow-2xl animate-fade-in">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90 z-10"></div>
+          <img 
+            src="https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/5cc4eb06-809e-4a8c-bb56-096c5d066120.jpg" 
+            alt="Градостроительство" 
+            className="w-full h-64 md:h-96 object-cover"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-white px-4">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
+              <Icon name="Building2" size={40} className="text-white" />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center">
+              Градостроительство России
+            </h1>
+            <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
+              Комплексная инструкция по территориальному планированию с учётом климатических, региональных и нормативных особенностей РФ
+            </p>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Градостроительство России
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Комплексная инструкция по территориальному планированию с учётом климатических, региональных и нормативных особенностей РФ
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: '200ms' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Ключевые особенности
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="hover-scale hover:shadow-lg transition-all duration-300 border-2 animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="hover-scale hover:shadow-xl transition-all duration-300 border-2 bg-card/50 backdrop-blur-sm animate-fade-in group"
+              style={{ animationDelay: `${(index + 3) * 100}ms` }}
             >
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <Icon name={feature.icon} size={32} className={feature.color} />
+                  <div className="flex-shrink-0 transition-transform group-hover:scale-110 duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Icon name={feature.icon} size={24} className={feature.color} />
+                    </div>
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.desc}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
                   </div>
                 </div>
               </CardContent>
@@ -185,6 +201,40 @@ const Index = () => {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {section.id === 'green' && (
+                      <Card className="md:col-span-2 overflow-hidden border-2 animate-scale-in">
+                        <div className="relative h-48 md:h-64">
+                          <img 
+                            src="https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/f29ef4ca-d778-4bf9-808f-d051dbb319a6.jpg" 
+                            alt="Зелёные зоны города" 
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                            <div className="p-6 text-white">
+                              <h3 className="text-2xl font-bold mb-2">Зелёные зоны города</h3>
+                              <p className="text-white/90">Парки, скверы и защитные насаждения для комфортной городской среды</p>
+                            </div>
+                          </div>
+                        </div>
+                      </Card>
+                    )}
+                    {section.id === 'infrastructure' && (
+                      <Card className="md:col-span-2 overflow-hidden border-2 animate-scale-in">
+                        <div className="relative h-48 md:h-64">
+                          <img 
+                            src="https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/c7e9b9db-276f-4bda-8505-fdfde7de22b8.jpg" 
+                            alt="Инфраструктура города" 
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                            <div className="p-6 text-white">
+                              <h3 className="text-2xl font-bold mb-2">Умная инфраструктура</h3>
+                              <p className="text-white/90">Современные системы жизнеобеспечения и цифровые технологии</p>
+                            </div>
+                          </div>
+                        </div>
+                      </Card>
+                    )}
                     {section.content.map((item, index) => (
                       <Card 
                         key={index}
