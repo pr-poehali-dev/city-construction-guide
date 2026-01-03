@@ -12,115 +12,99 @@ const Index = () => {
       id: 'classification',
       title: 'Классификация территорий',
       icon: 'LayoutGrid',
-      description: 'Типы территориальных зон и их назначение',
+      description: 'Типы территориальных зон социалистического города',
       gallery: [
-        { title: 'ЖК "Садовые кварталы"', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/0a66fc84-e9bb-49c9-9628-0df168c71bcf.jpg', desc: 'Современный жилой район с развитой инфраструктурой', year: '2020' },
-        { title: 'БЦ "Белая площадь"', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/efb072bd-2aa1-41f3-a56d-afae997643ed.jpg', desc: 'Общественно-деловой центр класса А', year: '2019' },
-        { title: 'Технопарк "Строгино"', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/4f6c3d2a-50cb-4511-826b-9d39d70ebe7c.jpg', desc: 'Производственно-логистический комплекс', year: '2018' },
-        { title: 'Парк "Тюфелева роща"', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/7aec4727-f36a-496b-ab1c-8844596e2f3f.jpg', desc: 'Рекреационная зона в центре Москвы', year: '2022' },
+        { title: 'Микрорайон ХХI съезда КПСС', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/65a7e91b-4cf6-47b6-a9d3-0343d47be88d.jpg', desc: 'Типовая жилая застройка серии К-7', year: '1967', stats: '12 000 жителей' },
+        { title: 'Дворец культуры ЗИЛ', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/efb072bd-2aa1-41f3-a56d-afae997643ed.jpg', desc: 'Общественно-культурный центр', year: '1937', stats: '500 000 посетителей/год' },
+        { title: 'Уралмаш, Свердловск', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/461810e9-c788-46e3-893f-09cf5e7be035.jpg', desc: 'Производственный соцгород', year: '1933', stats: '40 000 рабочих' },
+        { title: 'Парк Горького', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/7aec4727-f36a-496b-ab1c-8844596e2f3f.jpg', desc: 'Центральный парк культуры и отдыха', year: '1928', stats: '120 га' },
       ],
       content: [
-        { title: 'Жилые зоны', desc: 'Территории для размещения жилых домов различной этажности', emoji: '🏘️', color: 'bg-blue-100' },
-        { title: 'Общественно-деловые', desc: 'Зоны административных, торговых и культурных объектов', emoji: '🏢', color: 'bg-purple-100' },
-        { title: 'Производственные', desc: 'Территории промышленных предприятий и складов', emoji: '🏭', color: 'bg-orange-100' },
-        { title: 'Рекреационные', desc: 'Парки, скверы, зоны отдыха и спорта', emoji: '🌳', color: 'bg-green-100' },
+        { title: 'Жилые микрорайоны', desc: '5-9 этажная застройка по индустриальным сериям', emoji: '🏢', color: 'bg-primary/10', stats: '9-12 м² на человека' },
+        { title: 'Общественные центры', desc: 'Дворцы культуры, кинотеатры, библиотеки', emoji: '🏛️', color: 'bg-secondary/20', stats: '1 центр на район' },
+        { title: 'Промышленные зоны', desc: 'Заводы, комбинаты с соцгородами', emoji: '⚙️', color: 'bg-destructive/10', stats: 'СЗЗ 500-1000 м' },
+        { title: 'Парки культуры', desc: 'Зоны отдыха трудящихся', emoji: '🌲', color: 'bg-accent/20', stats: '12 м² на жителя' },
       ]
     },
     {
       id: 'planning',
       title: 'Планирование',
       icon: 'Map',
-      description: 'Основы территориального планирования',
+      description: 'Советская система градостроительного проектирования',
       content: [
-        { title: 'Генеральный план', desc: 'Стратегический документ развития территории на 20-25 лет', emoji: '📋', color: 'bg-indigo-100' },
-        { title: 'Правила землепользования', desc: 'ПЗЗ: регламенты использования земельных участков', emoji: '📜', color: 'bg-cyan-100' },
-        { title: 'Проект планировки', desc: 'Детальная проработка территории с красными линиями', emoji: '🗺️', color: 'bg-teal-100' },
-        { title: 'Градостроительный план', desc: 'ГПЗУ: основа для проектирования конкретного участка', emoji: '📐', color: 'bg-lime-100' },
+        { title: 'Генеральный план города', desc: 'Госплан СССР: 15-20 летние перспективы', emoji: '📋', color: 'bg-primary/10', stats: 'Разработка: 2-3 года' },
+        { title: 'Проект детальной планировки', desc: 'ПДП микрорайона: школы, сады, магазины', emoji: '📐', color: 'bg-secondary/20', stats: 'Радиус: 400-500 м' },
+        { title: 'Типовое проектирование', desc: 'ЦНИИЭП: серии жилых домов', emoji: '🏗️', color: 'bg-destructive/10', stats: 'Экономия 30-40%' },
+        { title: 'Социальные нормативы', desc: 'СНиП II-60-75: обеспечение населения', emoji: '📊', color: 'bg-accent/20', stats: 'Детсад: 1 место на 5 семей' },
       ]
     },
     {
       id: 'infrastructure',
       title: 'Инфраструктура',
       icon: 'Network',
-      description: 'Системы жизнеобеспечения города',
+      description: 'Системы жизнеобеспечения социалистического города',
       gallery: [
-        { title: 'МЦД Москва', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/bd2ee2d8-4247-4b5e-aa85-5a3fdd294163.jpg', desc: 'Московские центральные диаметры - новый вид транспорта', year: '2019' },
-        { title: 'Энергоцентр «Сколково»', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/45732f93-9713-4696-a754-6df239435a80.jpg', desc: 'Современная инженерная инфраструктура', year: '2020' },
-        { title: 'Школа №2065', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/d5f7b57b-6db0-491a-8e4f-f83757fd1e40.jpg', desc: 'Социальная инфраструктура нового поколения', year: '2021' },
-        { title: 'Smart City Москва', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/18229943-e240-42a3-912d-18890d375a97.jpg', desc: 'Цифровая инфраструктура умного города', year: '2022' },
+        { title: 'Метрополитен Москвы', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/a525ffa7-6cc7-43fc-a4b0-1a4e12722706.jpg', desc: 'Подземные дворцы для народа', year: '1935', stats: '196 станций' },
+        { title: 'ТЭЦ-22 Москва', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/45732f93-9713-4696-a754-6df239435a80.jpg', desc: 'Централизованное теплоснабжение', year: '1985', stats: '1000 МВт' },
+        { title: 'Школа №1 Автозавод', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/d5f7b57b-6db0-491a-8e4f-f83757fd1e40.jpg', desc: 'Типовая школа на 960 мест', year: '1973', stats: '3 смены' },
+        { title: 'АТС-4 Ленинград', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/18229943-e240-42a3-912d-18890d375a97.jpg', desc: 'Автоматическая телефонная станция', year: '1968', stats: '10 000 номеров' },
       ],
       content: [
-        { title: 'Транспортная', desc: 'Дороги, метро, трамвайные линии, велодорожки', emoji: '🚇', color: 'bg-red-100' },
-        { title: 'Инженерная', desc: 'Водоснабжение, канализация, электро- и теплосети', emoji: '⚡', color: 'bg-yellow-100' },
-        { title: 'Социальная', desc: 'Школы, поликлиники, детские сады по нормативам', emoji: '🏥', color: 'bg-pink-100' },
-        { title: 'Цифровая', desc: 'Связь, интернет, умные системы управления городом', emoji: '📡', color: 'bg-violet-100' },
+        { title: 'Общественный транспорт', desc: 'Метро, трамвай, автобус — основа мобильности', emoji: '🚇', color: 'bg-primary/10', stats: '5 коп. за проезд' },
+        { title: 'Коммунальное хозяйство', desc: 'ТЭЦ, водоканал — централизованные системы', emoji: '⚡', color: 'bg-secondary/20', stats: '100% охват' },
+        { title: 'Народное образование', desc: 'Школы, ПТУ, техникумы в шаговой доступности', emoji: '🎓', color: 'bg-destructive/10', stats: 'Бесплатное обучение' },
+        { title: 'Связь и радио', desc: 'Телефонизация, радиоточки, телецентры', emoji: '📻', color: 'bg-accent/20', stats: '1 точка на квартиру' },
       ]
     },
     {
-      id: 'zones',
-      title: 'Типы застройки',
+      id: 'housing',
+      title: 'Жилищное строительство',
       icon: 'Building2',
-      description: 'Жилые, коммерческие и общественные зоны',
+      description: 'Массовая застройка и решение жилищной проблемы',
       content: [
-        { title: 'Многоэтажная жилая', desc: 'Высотная застройка 9+ этажей с развитой инфраструктурой', emoji: '🏙️', color: 'bg-blue-100' },
-        { title: 'Малоэтажная жилая', desc: 'Индивидуальные дома и таунхаусы до 3 этажей', emoji: '🏡', color: 'bg-green-100' },
-        { title: 'Торговые центры', desc: 'Крупные ТРЦ с парковками и транспортной доступностью', emoji: '🛍️', color: 'bg-orange-100' },
-        { title: 'Образовательные', desc: 'Школы, вузы, детские сады с озеленёнными территориями', emoji: '🎓', color: 'bg-purple-100' },
+        { title: 'Хрущёвки (1959-1985)', desc: 'Серии 1-464, 1-335: первое жильё миллионам', emoji: '🏢', color: 'bg-primary/10', stats: '18-32 м² квартира' },
+        { title: 'Брежневки (1965-1985)', desc: 'Серии П-44, II-49: улучшенная планировка', emoji: '🏘️', color: 'bg-secondary/20', stats: '40-60 м² квартира' },
+        { title: 'Соцгорода', desc: 'Комплексная застройка при заводах', emoji: '🏭', color: 'bg-destructive/10', stats: 'Жильё от предприятия' },
+        { title: 'Кооперативное жильё', desc: 'ЖСК: участие населения в строительстве', emoji: '🏗️', color: 'bg-accent/20', stats: '30% стоимости взнос' },
       ]
     },
     {
-      id: 'green',
-      title: 'Озеленение',
-      icon: 'Trees',
-      description: 'Зелёные зоны и экология города',
-      content: [
-        { title: 'Городские парки', desc: 'Крупные парковые зоны от 10 га с развитой инфраструктурой', emoji: '🌲', color: 'bg-emerald-100' },
-        { title: 'Скверы и бульвары', desc: 'Малые зелёные зоны до 2 га в жилых районах', emoji: '🌿', color: 'bg-lime-100' },
-        { title: 'Защитные насаждения', desc: 'Санитарно-защитные зоны вдоль дорог и предприятий', emoji: '🌳', color: 'bg-teal-100' },
-        { title: 'Дворовые территории', desc: 'Озеленение дворов: 40% площади по нормам', emoji: '🪴', color: 'bg-green-100' },
-      ]
-    },
-    {
-      id: 'examples',
-      title: 'Примеры',
+      id: 'achievements',
+      title: 'Достижения СССР',
       icon: 'Star',
-      description: 'Успешные проекты градостроительства',
+      description: 'Социалистическое градостроительство в цифрах',
       content: [
         { 
-          title: 'Зарядье, Москва', 
-          desc: 'Парк на месте гостиницы Россия: 13 га инноваций с амфитеатром, подземным музеем и "парящим" мостом', 
-          emoji: '🎪', 
-          color: 'bg-blue-100',
-          image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/d20ed598-3df0-4553-8a1b-ab3307c3262e.jpg',
-          year: '2017',
-          stats: '13 га • 25 000 посетителей/день'
+          title: '1922-1991: 69 лет строительства', 
+          desc: 'От разрухи к сверхдержаве через планомерное развитие территорий', 
+          emoji: '⭐', 
+          color: 'bg-primary/10',
+          stats: '1.6 млрд м² жилья',
+          year: '1922-1991'
         },
         { 
-          title: 'Новая Голландия, СПб', 
-          desc: 'Реконструкция исторического острова XVIII века в современный культурный кластер с парком и коворкингами', 
-          emoji: '🏛️', 
-          color: 'bg-indigo-100',
-          image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/3d8c8b32-6a08-4525-9693-6c54d3b93ddf.jpg',
-          year: '2016',
-          stats: '7.6 га • 2 млн посетителей/год'
+          title: '15 социалистических республик', 
+          desc: 'Единая система расселения от Калининграда до Владивостока', 
+          emoji: '🗺️', 
+          color: 'bg-secondary/20',
+          stats: '22.4 млн км²',
+          year: 'СССР'
         },
         { 
-          title: 'Академический, Екб', 
-          desc: 'Новый микрорайон с продуманной инфраструктурой: школы, детсады, поликлиники в шаговой доступности', 
-          emoji: '🏗️', 
-          color: 'bg-purple-100',
-          image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/cff5611a-0716-4413-b696-f6dd69fb1185.jpg',
-          year: '2015',
-          stats: '600 га • 100 000 жителей'
+          title: '1024 города к 1989 году', 
+          desc: 'Новые города: Магнитогорск, Комсомольск-на-Амуре, Набережные Челны', 
+          emoji: '🏙️', 
+          color: 'bg-destructive/10',
+          stats: '+700 городов за 70 лет',
+          year: '1989'
         },
         { 
-          title: 'Иннополис, Казань', 
-          desc: 'IT-город с цифровой инфраструктурой, беспилотным транспортом и умными системами управления', 
-          emoji: '💡', 
-          color: 'bg-cyan-100',
-          image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/46a4e8dc-a50f-4a85-9d89-8efb1c5c91aa.jpg',
-          year: '2012',
-          stats: '2.2 км² • 5 000 жителей'
+          title: '66% городского населения', 
+          desc: 'Урбанизация: от аграрной страны к индустриальной державе', 
+          emoji: '📈', 
+          color: 'bg-accent/20',
+          stats: 'Рост с 18% (1926)',
+          year: '1989'
         },
       ]
     }
@@ -128,276 +112,221 @@ const Index = () => {
 
   const features = [
     {
-      title: 'Климатические особенности',
-      desc: 'От -50°C на Севере до +40°C на Юге: 8 климатических зон',
-      icon: 'CloudSnow',
-      color: 'text-blue-500'
+      title: 'ПЛАНОВАЯ ЭКОНОМИКА',
+      desc: 'Госплан определяет развитие каждого города на десятилетия',
+      icon: 'Target',
+      color: 'text-primary',
+      stats: '5-летние планы'
     },
     {
-      title: 'Региональные различия',
-      desc: '85 субъектов: от мегаполисов до малых городов',
-      icon: 'MapPin',
-      color: 'text-purple-500'
+      title: 'ТИПОВОЕ ПРОЕКТИРОВАНИЕ',
+      desc: 'Индустриальные серии жилых домов и общественных зданий',
+      icon: 'Copy',
+      color: 'text-secondary',
+      stats: 'Экономия 40%'
     },
     {
-      title: 'Нормативная база',
-      desc: 'Градостроительный кодекс РФ, СП, СанПиН, региональные нормы',
-      icon: 'FileText',
-      color: 'text-orange-500'
+      title: 'СОЦИАЛЬНЫЕ НОРМАТИВЫ',
+      desc: 'Школы, сады, поликлиники в радиусе 500 метров от жилья',
+      icon: 'Users',
+      color: 'text-destructive',
+      stats: 'СНиП обязателен'
     },
     {
-      title: 'Транспортная система',
-      desc: 'Интеграция авто, ЖД, метро, общественного транспорта',
-      icon: 'Train',
-      color: 'text-green-500'
-    },
-    {
-      title: 'Экологические требования',
-      desc: 'Зелёные зоны, очистка выбросов, устойчивое развитие',
-      icon: 'Leaf',
-      color: 'text-emerald-500'
+      title: 'БЕСПЛАТНОЕ ЖИЛЬЁ',
+      desc: 'Распределение квартир от государства и предприятий',
+      icon: 'Home',
+      color: 'text-accent',
+      stats: 'Очередь 5-7 лет'
     }
   ];
 
   const currentSection = sections.find(s => s.id === activeSection);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
-      <div className="container mx-auto px-4 py-8 md:py-16">
-        <div className="relative mb-16 overflow-hidden rounded-3xl shadow-2xl animate-fade-in">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90 z-10"></div>
-          <img 
-            src="https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/5cc4eb06-809e-4a8c-bb56-096c5d066120.jpg" 
-            alt="Градостроительство" 
-            className="w-full h-64 md:h-96 object-cover"
-          />
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-white px-4">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
-              <Icon name="Building2" size={40} className="text-white" />
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/40 to-background">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="relative mb-12 overflow-hidden bg-primary">
+          <div className="absolute inset-0 bg-gradient-to-r from-destructive via-primary to-secondary opacity-90"></div>
+          <div className="absolute top-0 left-0 w-full h-2 bg-secondary"></div>
+          <div className="absolute bottom-0 left-0 w-full h-2 bg-secondary"></div>
+          
+          <div className="relative z-10 text-primary-foreground px-6 py-12 md:py-16">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-secondary flex items-center justify-center">
+                  <Icon name="Building2" size={36} className="text-foreground" />
+                </div>
+                <div className="flex-1">
+                  <Badge variant="outline" className="mb-2 border-secondary bg-secondary/20 text-secondary-foreground font-bold">
+                    СССР 1922-1991
+                  </Badge>
+                  <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                    ГРАДОСТРОИТЕЛЬСТВО<br/>СОВЕТСКОГО СОЮЗА
+                  </h1>
+                </div>
+              </div>
+              <p className="text-lg md:text-xl leading-relaxed border-l-4 border-secondary pl-4">
+                Социалистическая система планирования и застройки территорий: от микрорайонов до генпланов республик
+              </p>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center">
-              Градостроительство России
-            </h1>
-            <p className="text-lg md:text-xl max-w-2xl text-center text-white/90">
-              Комплексная инструкция по территориальному планированию с учётом климатических, региональных и нормативных особенностей РФ
-            </p>
           </div>
         </div>
 
-        <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: '200ms' }}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Ключевые особенности
-          </h2>
-        </div>
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold mb-2 text-primary">
+              ОСНОВЫ СОВЕТСКОГО ГРАДОСТРОИТЕЛЬСТВА
+            </h2>
+            <div className="w-32 h-1 bg-secondary mx-auto"></div>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className="hover-scale hover:shadow-xl transition-all duration-300 border-2 bg-card/50 backdrop-blur-sm animate-fade-in group"
-              style={{ animationDelay: `${(index + 3) * 100}ms` }}
-            >
-              <CardContent className="pt-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 transition-transform group-hover:scale-110 duration-300">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Icon name={feature.icon} size={24} className={feature.color} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {features.map((feature, index) => (
+              <Card 
+                key={index} 
+                className="border-4 border-foreground/20 hover:border-primary transition-all duration-300 bg-card hover:shadow-xl"
+              >
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center gap-4">
+                    <div className="w-16 h-16 bg-primary/10 flex items-center justify-center">
+                      <Icon name={feature.icon} size={32} className={feature.color} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-2">{feature.desc}</p>
+                      <Badge className="bg-secondary text-secondary-foreground">{feature.stats}</Badge>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        <Card className="shadow-2xl border-2">
-          <CardHeader className="bg-gradient-to-r from-primary/5 to-secondary/5 border-b">
-            <CardTitle className="text-2xl md:text-3xl">Основные разделы</CardTitle>
-            <CardDescription>Выберите раздел для изучения детальной информации</CardDescription>
-          </CardHeader>
-          <CardContent className="p-6">
-            <Tabs value={activeSection} onValueChange={setActiveSection} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 h-auto bg-muted/50 p-2">
-                {sections.map((section) => (
-                  <TabsTrigger 
-                    key={section.id} 
-                    value={section.id}
-                    className="flex flex-col items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                  >
-                    <Icon name={section.icon} size={20} />
-                    <span className="text-xs font-medium text-center leading-tight">{section.title}</span>
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-
+        <div className="mb-12">
+          <Tabs value={activeSection} onValueChange={setActiveSection} className="w-full">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 bg-transparent h-auto p-0 mb-8">
               {sections.map((section) => (
-                <TabsContent key={section.id} value={section.id} className="mt-8">
-                  <div className="mb-8 text-center">
-                    <Badge variant="outline" className="mb-4 text-sm px-4 py-2">
-                      <Icon name={section.icon} size={16} className="mr-2" />
-                      {section.title}
-                    </Badge>
-                    <p className="text-muted-foreground text-lg">{section.description}</p>
-                  </div>
+                <TabsTrigger
+                  key={section.id}
+                  value={section.id}
+                  className="flex flex-col items-center gap-2 p-4 bg-card border-4 border-foreground/20 data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground hover:border-secondary transition-all h-auto"
+                >
+                  <Icon name={section.icon} size={24} />
+                  <span className="text-xs font-bold text-center leading-tight uppercase">{section.title}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
 
-                  {section.gallery && (
-                    <div className="mb-12">
-                      <h3 className="text-2xl font-bold mb-6 text-center">Галерея проектов</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        {section.gallery.map((project, index) => (
-                          <Card 
-                            key={`gallery-${index}`}
-                            className="hover-scale hover:shadow-xl transition-all duration-300 border-2 overflow-hidden group animate-scale-in"
-                            style={{ animationDelay: `${index * 100}ms` }}
-                          >
-                            <div className="relative h-48 overflow-hidden">
-                              <img 
-                                src={project.image} 
-                                alt={project.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                              />
-                              <div className="absolute top-3 right-3">
-                                <Badge className="bg-white/90 text-foreground backdrop-blur-sm">
-                                  {project.year}
-                                </Badge>
-                              </div>
-                            </div>
-                            <CardContent className="pt-4">
-                              <h4 className="font-bold text-lg mb-2">{project.title}</h4>
-                              <p className="text-sm text-muted-foreground">{project.desc}</p>
-                            </CardContent>
-                          </Card>
-                        ))}
-                      </div>
+            {sections.map((section) => (
+              <TabsContent key={section.id} value={section.id} className="mt-8">
+                <div className="mb-8 text-center bg-primary/10 py-6 border-y-4 border-primary">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary uppercase">
+                    {section.title}
+                  </h2>
+                  <p className="text-lg text-muted-foreground uppercase tracking-wide">{section.description}</p>
+                </div>
+
+                {section.gallery && (
+                  <div className="mb-12">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="flex-1 h-1 bg-secondary"></div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-center uppercase">Примеры объектов</h3>
+                      <div className="flex-1 h-1 bg-secondary"></div>
                     </div>
-                  )}
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {section.id === 'examples' && section.content.map((item, index) => (
-                      <Card 
-                        key={`example-${index}`}
-                        className="hover-scale hover:shadow-2xl transition-all duration-300 border-2 overflow-hidden group animate-scale-in md:col-span-2"
-                        style={{ animationDelay: `${index * 100}ms` }}
-                      >
-                        <div className="grid md:grid-cols-5 gap-0">
-                          <div className="relative md:col-span-2 h-48 md:h-auto overflow-hidden">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {section.gallery.map((project, index) => (
+                        <Card 
+                          key={`gallery-${index}`}
+                          className="border-4 border-foreground/20 hover:border-primary transition-all duration-300 overflow-hidden group bg-card"
+                        >
+                          <div className="relative h-56 overflow-hidden bg-muted">
                             <img 
-                              src={item.image} 
-                              alt={item.title}
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              src={project.image} 
+                              alt={project.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />
-                            <div className="absolute top-4 left-4 flex gap-2">
-                              <Badge className="bg-white/90 text-foreground backdrop-blur-sm">
-                                <Icon name="Calendar" size={14} className="mr-1" />
-                                {item.year}
+                            <div className="absolute top-4 right-4">
+                              <Badge className="bg-secondary text-secondary-foreground font-bold text-base px-3 py-1">
+                                {project.year}
                               </Badge>
                             </div>
                           </div>
-                          <div className="md:col-span-3 p-6 flex flex-col justify-between">
-                            <div>
-                              <div className="flex items-center gap-3 mb-3">
-                                <span className="text-4xl">{item.emoji}</span>
-                                <div>
-                                  <h3 className="text-2xl font-bold">{item.title}</h3>
-                                  <p className="text-sm text-muted-foreground">{item.stats}</p>
-                                </div>
-                              </div>
-                              <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-                            </div>
-                            <div className="flex gap-2 mt-4">
-                              <Badge variant="outline" className="text-xs">
-                                <Icon name="Award" size={12} className="mr-1" />
-                                Реализован
-                              </Badge>
-                              <Badge variant="outline" className="text-xs">
-                                <Icon name="Users" size={12} className="mr-1" />
-                                Публичное пространство
-                              </Badge>
-                            </div>
-                          </div>
-                        </div>
-                      </Card>
-                    ))}
-                    {section.id !== 'examples' && (
-                      <>
-                    {section.id === 'green' && (
-                      <Card className="md:col-span-2 overflow-hidden border-2 animate-scale-in">
-                        <div className="relative h-48 md:h-64">
-                          <img 
-                            src="https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/f29ef4ca-d778-4bf9-808f-d051dbb319a6.jpg" 
-                            alt="Зелёные зоны города" 
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                            <div className="p-6 text-white">
-                              <h3 className="text-2xl font-bold mb-2">Зелёные зоны города</h3>
-                              <p className="text-white/90">Парки, скверы и защитные насаждения для комфортной городской среды</p>
-                            </div>
-                          </div>
-                        </div>
-                      </Card>
-                    )}
-                    {section.id === 'infrastructure' && (
-                      <Card className="md:col-span-2 overflow-hidden border-2 animate-scale-in">
-                        <div className="relative h-48 md:h-64">
-                          <img 
-                            src="https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/c7e9b9db-276f-4bda-8505-fdfde7de22b8.jpg" 
-                            alt="Инфраструктура города" 
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                            <div className="p-6 text-white">
-                              <h3 className="text-2xl font-bold mb-2">Умная инфраструктура</h3>
-                              <p className="text-white/90">Современные системы жизнеобеспечения и цифровые технологии</p>
-                            </div>
-                          </div>
-                        </div>
-                      </Card>
-                    )}
-                    {section.content.map((item, index) => (
+                          <CardContent className="pt-6">
+                            <h4 className="font-bold text-xl mb-2 uppercase">{project.title}</h4>
+                            <p className="text-sm text-muted-foreground mb-3">{project.desc}</p>
+                            <Badge variant="outline" className="font-bold">{project.stats}</Badge>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {section.id === 'achievements' ? (
+                    section.content.map((item, index) => (
                       <Card 
-                        key={index}
-                        className="hover-scale hover:shadow-xl transition-all duration-300 border-2 overflow-hidden group animate-scale-in"
-                        style={{ animationDelay: `${index * 100}ms` }}
+                        key={`achievement-${index}`}
+                        className="border-4 border-foreground/20 hover:border-primary transition-all duration-300 bg-card md:col-span-2"
                       >
-                        <CardHeader className={`${item.color} transition-all duration-300 group-hover:scale-105`}>
-                          <div className="flex items-center gap-3">
-                            <span className="text-4xl">{item.emoji}</span>
-                            <CardTitle className="text-xl">{item.title}</CardTitle>
-                          </div>
-                        </CardHeader>
                         <CardContent className="pt-6">
-                          <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                          <div className="flex items-start gap-6">
+                            <div className="text-6xl">{item.emoji}</div>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-3 mb-3">
+                                <h3 className="text-2xl font-bold uppercase">{item.title}</h3>
+                                <Badge className="bg-secondary text-secondary-foreground">{item.year}</Badge>
+                              </div>
+                              <p className="text-muted-foreground mb-3 text-lg">{item.desc}</p>
+                              <div className="flex gap-2">
+                                <Badge variant="outline" className="font-bold text-base px-4 py-2">{item.stats}</Badge>
+                              </div>
+                            </div>
+                          </div>
                         </CardContent>
                       </Card>
-                    ))}
-                    </>
-                    )}
-                  </div>
-                </TabsContent>
-              ))}
-            </Tabs>
-          </CardContent>
-        </Card>
-
-        <div className="mt-12 text-center">
-          <Card className="inline-block bg-gradient-to-r from-primary/10 to-secondary/10 border-2">
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-4">
-                <Icon name="Info" size={24} className="text-primary" />
-                <div className="text-left">
-                  <p className="font-semibold mb-1">Образовательный портал</p>
-                  <p className="text-sm text-muted-foreground">
-                    Материалы актуализированы в соответствии с действующим законодательством РФ
-                  </p>
+                    ))
+                  ) : (
+                    section.content.map((item, index) => (
+                      <Card 
+                        key={`content-${index}`}
+                        className={`border-4 border-foreground/20 hover:border-primary transition-all duration-300 ${item.color} group`}
+                      >
+                        <CardContent className="pt-6">
+                          <div className="flex items-start gap-4">
+                            <div className="text-4xl">{item.emoji}</div>
+                            <div className="flex-1">
+                              <h3 className="text-xl font-bold mb-2 uppercase">{item.title}</h3>
+                              <p className="text-sm text-muted-foreground mb-3">{item.desc}</p>
+                              {item.stats && (
+                                <Badge variant="outline" className="font-bold">{item.stats}</Badge>
+                              )}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))
+                  )}
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
+
+        <div className="mt-16 text-center bg-primary text-primary-foreground py-8 border-t-4 border-secondary">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-12 h-12 bg-secondary flex items-center justify-center">
+              <Icon name="Hammer" size={24} className="text-foreground" />
+            </div>
+            <p className="text-2xl font-bold uppercase">
+              Пролетарии всех стран, соединяйтесь!
+            </p>
+          </div>
+          <p className="text-sm uppercase tracking-wide">
+            Материал подготовлен на основе архивов Госстроя СССР
+          </p>
         </div>
       </div>
     </div>
