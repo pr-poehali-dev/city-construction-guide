@@ -74,10 +74,42 @@ const Index = () => {
       icon: 'Star',
       description: 'Успешные проекты градостроительства',
       content: [
-        { title: 'Зарядье, Москва', desc: 'Парк на месте гостиницы Россия: 13 га инноваций', emoji: '🎪', color: 'bg-blue-100' },
-        { title: 'Новая Голландия, СПб', desc: 'Реконструкция исторического острова для культуры и отдыха', emoji: '🏛️', color: 'bg-indigo-100' },
-        { title: 'Академический, Екб', desc: 'Новый район с продуманной инфраструктурой и транспортом', emoji: '🏗️', color: 'bg-purple-100' },
-        { title: 'Смарт-Сити Казань', desc: 'IT-город с цифровой инфраструктурой и умными технологиями', emoji: '💡', color: 'bg-cyan-100' },
+        { 
+          title: 'Зарядье, Москва', 
+          desc: 'Парк на месте гостиницы Россия: 13 га инноваций с амфитеатром, подземным музеем и "парящим" мостом', 
+          emoji: '🎪', 
+          color: 'bg-blue-100',
+          image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/d20ed598-3df0-4553-8a1b-ab3307c3262e.jpg',
+          year: '2017',
+          stats: '13 га • 25 000 посетителей/день'
+        },
+        { 
+          title: 'Новая Голландия, СПб', 
+          desc: 'Реконструкция исторического острова XVIII века в современный культурный кластер с парком и коворкингами', 
+          emoji: '🏛️', 
+          color: 'bg-indigo-100',
+          image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/3d8c8b32-6a08-4525-9693-6c54d3b93ddf.jpg',
+          year: '2016',
+          stats: '7.6 га • 2 млн посетителей/год'
+        },
+        { 
+          title: 'Академический, Екб', 
+          desc: 'Новый микрорайон с продуманной инфраструктурой: школы, детсады, поликлиники в шаговой доступности', 
+          emoji: '🏗️', 
+          color: 'bg-purple-100',
+          image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/cff5611a-0716-4413-b696-f6dd69fb1185.jpg',
+          year: '2015',
+          stats: '600 га • 100 000 жителей'
+        },
+        { 
+          title: 'Иннополис, Казань', 
+          desc: 'IT-город с цифровой инфраструктурой, беспилотным транспортом и умными системами управления', 
+          emoji: '💡', 
+          color: 'bg-cyan-100',
+          image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/46a4e8dc-a50f-4a85-9d89-8efb1c5c91aa.jpg',
+          year: '2012',
+          stats: '2.2 км² • 5 000 жителей'
+        },
       ]
     }
   ];
@@ -201,6 +233,53 @@ const Index = () => {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {section.id === 'examples' && section.content.map((item, index) => (
+                      <Card 
+                        key={`example-${index}`}
+                        className="hover-scale hover:shadow-2xl transition-all duration-300 border-2 overflow-hidden group animate-scale-in md:col-span-2"
+                        style={{ animationDelay: `${index * 100}ms` }}
+                      >
+                        <div className="grid md:grid-cols-5 gap-0">
+                          <div className="relative md:col-span-2 h-48 md:h-auto overflow-hidden">
+                            <img 
+                              src={item.image} 
+                              alt={item.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                            <div className="absolute top-4 left-4 flex gap-2">
+                              <Badge className="bg-white/90 text-foreground backdrop-blur-sm">
+                                <Icon name="Calendar" size={14} className="mr-1" />
+                                {item.year}
+                              </Badge>
+                            </div>
+                          </div>
+                          <div className="md:col-span-3 p-6 flex flex-col justify-between">
+                            <div>
+                              <div className="flex items-center gap-3 mb-3">
+                                <span className="text-4xl">{item.emoji}</span>
+                                <div>
+                                  <h3 className="text-2xl font-bold">{item.title}</h3>
+                                  <p className="text-sm text-muted-foreground">{item.stats}</p>
+                                </div>
+                              </div>
+                              <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                            </div>
+                            <div className="flex gap-2 mt-4">
+                              <Badge variant="outline" className="text-xs">
+                                <Icon name="Award" size={12} className="mr-1" />
+                                Реализован
+                              </Badge>
+                              <Badge variant="outline" className="text-xs">
+                                <Icon name="Users" size={12} className="mr-1" />
+                                Публичное пространство
+                              </Badge>
+                            </div>
+                          </div>
+                        </div>
+                      </Card>
+                    ))}
+                    {section.id !== 'examples' && (
+                      <>
                     {section.id === 'green' && (
                       <Card className="md:col-span-2 overflow-hidden border-2 animate-scale-in">
                         <div className="relative h-48 md:h-64">
@@ -252,6 +331,8 @@ const Index = () => {
                         </CardContent>
                       </Card>
                     ))}
+                    </>
+                    )}
                   </div>
                 </TabsContent>
               ))}
