@@ -7,6 +7,15 @@ import { Badge } from '@/components/ui/badge';
 const Index = () => {
   const [activeSection, setActiveSection] = useState('classification');
 
+  const slogans = [
+    'Пятилетку — за четыре года!',
+    'Строим города для народа!',
+    'Каждой семье — отдельную квартиру!',
+    'Слава советским строителям!',
+    'Плановое хозяйство — наша сила!',
+    'Вперёд к победе коммунизма!'
+  ];
+
   const sections = [
     {
       id: 'classification',
@@ -173,6 +182,59 @@ const Index = () => {
           </div>
         </div>
 
+        {/* Пропагандистские плакаты */}
+        <div className="mb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="relative overflow-hidden border-4 border-primary group">
+            <img 
+              src="https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/adc38809-f254-4de4-9438-40a5ab4235ff.jpg"
+              alt="Строим города"
+              className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-primary/95 p-4 border-t-4 border-secondary">
+              <p className="text-primary-foreground font-bold text-xl text-center uppercase">
+                Строим города для народа!
+              </p>
+            </div>
+          </div>
+          
+          <div className="relative overflow-hidden border-4 border-secondary group">
+            <img 
+              src="https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/1907d75c-4476-42d8-b658-b20a71b950a1.jpg"
+              alt="Пятилетка"
+              className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-secondary/95 p-4 border-t-4 border-primary">
+              <p className="text-foreground font-bold text-xl text-center uppercase">
+                Пятилетку — за четыре года!
+              </p>
+            </div>
+          </div>
+          
+          <div className="relative overflow-hidden border-4 border-destructive group">
+            <img 
+              src="https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/b0f85859-6615-41aa-bac2-4c11ddec444b.jpg"
+              alt="Конструктивизм"
+              className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-destructive/95 p-4 border-t-4 border-secondary">
+              <p className="text-primary-foreground font-bold text-xl text-center uppercase">
+                Слава советским строителям!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Бегущая строка лозунгов */}
+        <div className="mb-12 bg-destructive border-y-4 border-secondary py-3 overflow-hidden">
+          <div className="animate-marquee whitespace-nowrap">
+            {[...slogans, ...slogans].map((slogan, index) => (
+              <span key={index} className="inline-block mx-8 text-primary-foreground font-bold text-xl">
+                ★ {slogan}
+              </span>
+            ))}
+          </div>
+        </div>
+
         <div className="mb-16">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-5xl font-bold mb-2 text-primary">
@@ -230,17 +292,22 @@ const Index = () => {
 
                 {section.gallery && (
                   <div className="mb-12">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="flex-1 h-1 bg-secondary"></div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-center uppercase">Примеры объектов</h3>
-                      <div className="flex-1 h-1 bg-secondary"></div>
+                    <div className="flex items-center gap-4 mb-6 bg-secondary/20 p-4 border-y-2 border-secondary">
+                      <Icon name="Award" size={32} className="text-primary" />
+                      <h3 className="text-2xl md:text-3xl font-bold text-center uppercase flex-1">Примеры объектов социалистического строительства</h3>
+                      <Icon name="Award" size={32} className="text-primary" />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {section.gallery.map((project, index) => (
                         <Card 
                           key={`gallery-${index}`}
-                          className="border-4 border-foreground/20 hover:border-primary transition-all duration-300 overflow-hidden group bg-card"
+                          className="border-4 border-foreground/20 hover:border-primary transition-all duration-300 overflow-hidden group bg-card relative"
                         >
+                          <div className="absolute top-3 left-3 z-10">
+                            <Badge className="bg-primary text-primary-foreground font-bold text-sm px-3 py-1">
+                              ★
+                            </Badge>
+                          </div>
                           <div className="relative h-56 overflow-hidden bg-muted">
                             <img 
                               src={project.image} 
