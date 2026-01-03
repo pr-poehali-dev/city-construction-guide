@@ -13,6 +13,12 @@ const Index = () => {
       title: 'Классификация территорий',
       icon: 'LayoutGrid',
       description: 'Типы территориальных зон и их назначение',
+      gallery: [
+        { title: 'ЖК "Садовые кварталы"', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/0a66fc84-e9bb-49c9-9628-0df168c71bcf.jpg', desc: 'Современный жилой район с развитой инфраструктурой', year: '2020' },
+        { title: 'БЦ "Белая площадь"', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/efb072bd-2aa1-41f3-a56d-afae997643ed.jpg', desc: 'Общественно-деловой центр класса А', year: '2019' },
+        { title: 'Технопарк "Строгино"', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/4f6c3d2a-50cb-4511-826b-9d39d70ebe7c.jpg', desc: 'Производственно-логистический комплекс', year: '2018' },
+        { title: 'Парк "Тюфелева роща"', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/7aec4727-f36a-496b-ab1c-8844596e2f3f.jpg', desc: 'Рекреационная зона в центре Москвы', year: '2022' },
+      ],
       content: [
         { title: 'Жилые зоны', desc: 'Территории для размещения жилых домов различной этажности', emoji: '🏘️', color: 'bg-blue-100' },
         { title: 'Общественно-деловые', desc: 'Зоны административных, торговых и культурных объектов', emoji: '🏢', color: 'bg-purple-100' },
@@ -37,6 +43,12 @@ const Index = () => {
       title: 'Инфраструктура',
       icon: 'Network',
       description: 'Системы жизнеобеспечения города',
+      gallery: [
+        { title: 'МЦД Москва', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/bd2ee2d8-4247-4b5e-aa85-5a3fdd294163.jpg', desc: 'Московские центральные диаметры - новый вид транспорта', year: '2019' },
+        { title: 'Энергоцентр «Сколково»', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/45732f93-9713-4696-a754-6df239435a80.jpg', desc: 'Современная инженерная инфраструктура', year: '2020' },
+        { title: 'Школа №2065', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/d5f7b57b-6db0-491a-8e4f-f83757fd1e40.jpg', desc: 'Социальная инфраструктура нового поколения', year: '2021' },
+        { title: 'Smart City Москва', image: 'https://cdn.poehali.dev/projects/9ee78f5d-8a1c-4080-b917-68f9a9c1f8cd/files/18229943-e240-42a3-912d-18890d375a97.jpg', desc: 'Цифровая инфраструктура умного города', year: '2022' },
+      ],
       content: [
         { title: 'Транспортная', desc: 'Дороги, метро, трамвайные линии, велодорожки', emoji: '🚇', color: 'bg-red-100' },
         { title: 'Инженерная', desc: 'Водоснабжение, канализация, электро- и теплосети', emoji: '⚡', color: 'bg-yellow-100' },
@@ -231,6 +243,38 @@ const Index = () => {
                     </Badge>
                     <p className="text-muted-foreground text-lg">{section.description}</p>
                   </div>
+
+                  {section.gallery && (
+                    <div className="mb-12">
+                      <h3 className="text-2xl font-bold mb-6 text-center">Галерея проектов</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        {section.gallery.map((project, index) => (
+                          <Card 
+                            key={`gallery-${index}`}
+                            className="hover-scale hover:shadow-xl transition-all duration-300 border-2 overflow-hidden group animate-scale-in"
+                            style={{ animationDelay: `${index * 100}ms` }}
+                          >
+                            <div className="relative h-48 overflow-hidden">
+                              <img 
+                                src={project.image} 
+                                alt={project.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                              <div className="absolute top-3 right-3">
+                                <Badge className="bg-white/90 text-foreground backdrop-blur-sm">
+                                  {project.year}
+                                </Badge>
+                              </div>
+                            </div>
+                            <CardContent className="pt-4">
+                              <h4 className="font-bold text-lg mb-2">{project.title}</h4>
+                              <p className="text-sm text-muted-foreground">{project.desc}</p>
+                            </CardContent>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {section.id === 'examples' && section.content.map((item, index) => (
